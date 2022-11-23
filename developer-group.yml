@@ -1,0 +1,54 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: This template creates Developer Group and attach policies.
+Resources:
+  CitridotDeveloperGroup:
+    Type: AWS::IAM::Group
+    Properties:
+      Path: "/CitridotDeveloperGroup/"
+      Policies:
+        - PolicyName: CitridotDeveloperPolicy
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action:
+                  - "s3:Create*"
+                  - "s3:Get*"
+                  - "s3:List*"
+                  - "s3:Put*"
+                Resource: "*"
+              - Effect: Allow
+                Action:
+                  - "ec2:*"
+                Resource: "*"
+              - Effect: Allow
+                Action:
+                  - "iot:Create*"
+                  - "iot:Describe*"
+                  - "iot:Get*"
+                  - "iot:List*"
+                  - "iot:Update*"
+                Resource: "*"
+              - Effect: Allow
+                Action:
+                  - "kinesisanalytics:*"
+                Resource: "*"
+              - Effect: Allow
+                Action:
+                  - "kinesis:*"
+                Resource: "*"
+              - Effect: Allow
+                Action:
+                  - "lambda:CreateCodeSigningConfig"
+                  - "lambda:GetFunctionUrlConfig"
+                  - "lambda:ListFunctions"
+                  - "lambda:PutFunctionConcurrency"
+                  - "lambda:UpdateFunctionCode"
+                Resource: "*"
+              - Effect: Allow
+                Action:
+                  - "kafka:CreateCluster"
+                  - "kafka:DescribeClusterOperation"
+                  - "kafka:ListClustersV2"
+                  - "kafka:UpdateConfiguration"
+                Resource: "*"
