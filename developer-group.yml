@@ -1,12 +1,12 @@
 AWSTemplateFormatVersion: 2010-09-09
 Description: This template creates Developer Group and attach policies.
 Resources:
-  CitridotDeveloperGroup:
+  DeveloperGroup:
     Type: AWS::IAM::Group
     Properties:
-      Path: "/CitridotDeveloperGroup/"
+      Path: "/DeveloperGroup/"
       Policies:
-        - PolicyName: CitridotDeveloperPolicy
+        - PolicyName: DeveloperPolicy
           PolicyDocument:
             Version: "2012-10-17"
             Statement:
